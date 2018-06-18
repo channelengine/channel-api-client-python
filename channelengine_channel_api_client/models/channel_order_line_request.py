@@ -77,6 +77,7 @@ class ChannelOrderLineRequest(object):
     def channel_product_no(self):
         """Gets the channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
 
+        The unique order reference used by the channel  # noqa: E501
 
         :return: The channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
         :rtype: str
@@ -87,6 +88,7 @@ class ChannelOrderLineRequest(object):
     def channel_product_no(self, channel_product_no):
         """Sets the channel_product_no of this ChannelOrderLineRequest.
 
+        The unique order reference used by the channel  # noqa: E501
 
         :param channel_product_no: The channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
         :type: str
@@ -104,6 +106,7 @@ class ChannelOrderLineRequest(object):
     def quantity(self):
         """Gets the quantity of this ChannelOrderLineRequest.  # noqa: E501
 
+        The number of items of the product  # noqa: E501
 
         :return: The quantity of this ChannelOrderLineRequest.  # noqa: E501
         :rtype: int
@@ -114,6 +117,7 @@ class ChannelOrderLineRequest(object):
     def quantity(self, quantity):
         """Sets the quantity of this ChannelOrderLineRequest.
 
+        The number of items of the product  # noqa: E501
 
         :param quantity: The quantity of this ChannelOrderLineRequest.  # noqa: E501
         :type: int

@@ -90,6 +90,7 @@ class ChannelReturnRequest(object):
     def channel_order_no(self):
         """Gets the channel_order_no of this ChannelReturnRequest.  # noqa: E501
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :return: The channel_order_no of this ChannelReturnRequest.  # noqa: E501
         :rtype: str
@@ -100,6 +101,7 @@ class ChannelReturnRequest(object):
     def channel_order_no(self, channel_order_no):
         """Sets the channel_order_no of this ChannelReturnRequest.
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :param channel_order_no: The channel_order_no of this ChannelReturnRequest.  # noqa: E501
         :type: str
@@ -113,6 +115,7 @@ class ChannelReturnRequest(object):
     def channel_reference(self):
         """Gets the channel_reference of this ChannelReturnRequest.  # noqa: E501
 
+        The unique return reference used by the Channel  # noqa: E501
 
         :return: The channel_reference of this ChannelReturnRequest.  # noqa: E501
         :rtype: str
@@ -123,6 +126,7 @@ class ChannelReturnRequest(object):
     def channel_reference(self, channel_reference):
         """Sets the channel_reference of this ChannelReturnRequest.
 
+        The unique return reference used by the Channel  # noqa: E501
 
         :param channel_reference: The channel_reference of this ChannelReturnRequest.  # noqa: E501
         :type: str
@@ -159,6 +163,7 @@ class ChannelReturnRequest(object):
     def id(self):
         """Gets the id of this ChannelReturnRequest.  # noqa: E501
 
+        The unique return reference used by ChannelEngine  # noqa: E501
 
         :return: The id of this ChannelReturnRequest.  # noqa: E501
         :rtype: int
@@ -169,6 +174,7 @@ class ChannelReturnRequest(object):
     def id(self, id):
         """Sets the id of this ChannelReturnRequest.
 
+        The unique return reference used by ChannelEngine  # noqa: E501
 
         :param id: The id of this ChannelReturnRequest.  # noqa: E501
         :type: int
@@ -180,6 +186,7 @@ class ChannelReturnRequest(object):
     def reason(self):
         """Gets the reason of this ChannelReturnRequest.  # noqa: E501
 
+        The reason code of the return  # noqa: E501
 
         :return: The reason of this ChannelReturnRequest.  # noqa: E501
         :rtype: str
@@ -190,6 +197,7 @@ class ChannelReturnRequest(object):
     def reason(self, reason):
         """Sets the reason of this ChannelReturnRequest.
 
+        The reason code of the return  # noqa: E501
 
         :param reason: The reason of this ChannelReturnRequest.  # noqa: E501
         :type: str
@@ -207,6 +215,7 @@ class ChannelReturnRequest(object):
     def customer_comment(self):
         """Gets the customer_comment of this ChannelReturnRequest.  # noqa: E501
 
+        Optional. Comment of customer on the (reason of) the return  # noqa: E501
 
         :return: The customer_comment of this ChannelReturnRequest.  # noqa: E501
         :rtype: str
@@ -217,6 +226,7 @@ class ChannelReturnRequest(object):
     def customer_comment(self, customer_comment):
         """Sets the customer_comment of this ChannelReturnRequest.
 
+        Optional. Comment of customer on the (reason of) the return  # noqa: E501
 
         :param customer_comment: The customer_comment of this ChannelReturnRequest.  # noqa: E501
         :type: str
@@ -232,6 +242,7 @@ class ChannelReturnRequest(object):
     def merchant_comment(self):
         """Gets the merchant_comment of this ChannelReturnRequest.  # noqa: E501
 
+        Optional. Comment of merchant on the return.  # noqa: E501
 
         :return: The merchant_comment of this ChannelReturnRequest.  # noqa: E501
         :rtype: str
@@ -242,6 +253,7 @@ class ChannelReturnRequest(object):
     def merchant_comment(self, merchant_comment):
         """Sets the merchant_comment of this ChannelReturnRequest.
 
+        Optional. Comment of merchant on the return.  # noqa: E501
 
         :param merchant_comment: The merchant_comment of this ChannelReturnRequest.  # noqa: E501
         :type: str
@@ -257,6 +269,7 @@ class ChannelReturnRequest(object):
     def refund_incl_vat(self):
         """Gets the refund_incl_vat of this ChannelReturnRequest.  # noqa: E501
 
+        Refund amount incl. VAT  # noqa: E501
 
         :return: The refund_incl_vat of this ChannelReturnRequest.  # noqa: E501
         :rtype: float
@@ -267,6 +280,7 @@ class ChannelReturnRequest(object):
     def refund_incl_vat(self, refund_incl_vat):
         """Sets the refund_incl_vat of this ChannelReturnRequest.
 
+        Refund amount incl. VAT  # noqa: E501
 
         :param refund_incl_vat: The refund_incl_vat of this ChannelReturnRequest.  # noqa: E501
         :type: float
@@ -278,6 +292,7 @@ class ChannelReturnRequest(object):
     def refund_excl_vat(self):
         """Gets the refund_excl_vat of this ChannelReturnRequest.  # noqa: E501
 
+        Refund amount excl. VAT  # noqa: E501
 
         :return: The refund_excl_vat of this ChannelReturnRequest.  # noqa: E501
         :rtype: float
@@ -288,6 +303,7 @@ class ChannelReturnRequest(object):
     def refund_excl_vat(self, refund_excl_vat):
         """Sets the refund_excl_vat of this ChannelReturnRequest.
 
+        Refund amount excl. VAT  # noqa: E501
 
         :param refund_excl_vat: The refund_excl_vat of this ChannelReturnRequest.  # noqa: E501
         :type: float

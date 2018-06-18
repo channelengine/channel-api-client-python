@@ -71,6 +71,7 @@ class ChannelShipmentResponse(object):
     def channel_order_no(self):
         """Gets the channel_order_no of this ChannelShipmentResponse.  # noqa: E501
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :return: The channel_order_no of this ChannelShipmentResponse.  # noqa: E501
         :rtype: str
@@ -81,6 +82,7 @@ class ChannelShipmentResponse(object):
     def channel_order_no(self, channel_order_no):
         """Sets the channel_order_no of this ChannelShipmentResponse.
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :param channel_order_no: The channel_order_no of this ChannelShipmentResponse.  # noqa: E501
         :type: str
@@ -117,6 +119,7 @@ class ChannelShipmentResponse(object):
     def track_trace_no(self):
         """Gets the track_trace_no of this ChannelShipmentResponse.  # noqa: E501
 
+        The unique shipping reference used by the Shipping carrier (track&amp;trace number)  # noqa: E501
 
         :return: The track_trace_no of this ChannelShipmentResponse.  # noqa: E501
         :rtype: str
@@ -127,6 +130,7 @@ class ChannelShipmentResponse(object):
     def track_trace_no(self, track_trace_no):
         """Sets the track_trace_no of this ChannelShipmentResponse.
 
+        The unique shipping reference used by the Shipping carrier (track&amp;trace number)  # noqa: E501
 
         :param track_trace_no: The track_trace_no of this ChannelShipmentResponse.  # noqa: E501
         :type: str
@@ -142,6 +146,7 @@ class ChannelShipmentResponse(object):
     def track_trace_url(self):
         """Gets the track_trace_url of this ChannelShipmentResponse.  # noqa: E501
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :return: The track_trace_url of this ChannelShipmentResponse.  # noqa: E501
         :rtype: str
@@ -152,6 +157,7 @@ class ChannelShipmentResponse(object):
     def track_trace_url(self, track_trace_url):
         """Sets the track_trace_url of this ChannelShipmentResponse.
 
+        A link to a page of the carrier where the customer can track the shipping of her package.  # noqa: E501
 
         :param track_trace_url: The track_trace_url of this ChannelShipmentResponse.  # noqa: E501
         :type: str
@@ -167,6 +173,7 @@ class ChannelShipmentResponse(object):
     def method(self):
         """Gets the method of this ChannelShipmentResponse.  # noqa: E501
 
+        Shipment method (carrier)  # noqa: E501
 
         :return: The method of this ChannelShipmentResponse.  # noqa: E501
         :rtype: str
@@ -177,6 +184,7 @@ class ChannelShipmentResponse(object):
     def method(self, method):
         """Sets the method of this ChannelShipmentResponse.
 
+        Shipment method (carrier)  # noqa: E501
 
         :param method: The method of this ChannelShipmentResponse.  # noqa: E501
         :type: str

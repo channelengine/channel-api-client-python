@@ -54,6 +54,7 @@ class ChannelShipmentLineResponse(object):
     def channel_product_no(self):
         """Gets the channel_product_no of this ChannelShipmentLineResponse.  # noqa: E501
 
+        The unique product reference used by the Channel  # noqa: E501
 
         :return: The channel_product_no of this ChannelShipmentLineResponse.  # noqa: E501
         :rtype: str
@@ -64,6 +65,7 @@ class ChannelShipmentLineResponse(object):
     def channel_product_no(self, channel_product_no):
         """Sets the channel_product_no of this ChannelShipmentLineResponse.
 
+        The unique product reference used by the Channel  # noqa: E501
 
         :param channel_product_no: The channel_product_no of this ChannelShipmentLineResponse.  # noqa: E501
         :type: str
@@ -77,6 +79,7 @@ class ChannelShipmentLineResponse(object):
     def quantity(self):
         """Gets the quantity of this ChannelShipmentLineResponse.  # noqa: E501
 
+        Number of items of the product in the shipment  # noqa: E501
 
         :return: The quantity of this ChannelShipmentLineResponse.  # noqa: E501
         :rtype: int
@@ -87,6 +90,7 @@ class ChannelShipmentLineResponse(object):
     def quantity(self, quantity):
         """Sets the quantity of this ChannelShipmentLineResponse.
 
+        Number of items of the product in the shipment  # noqa: E501
 
         :param quantity: The quantity of this ChannelShipmentLineResponse.  # noqa: E501
         :type: int

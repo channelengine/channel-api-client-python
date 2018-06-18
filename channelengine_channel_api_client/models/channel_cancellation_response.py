@@ -66,6 +66,7 @@ class ChannelCancellationResponse(object):
     def channel_order_no(self):
         """Gets the channel_order_no of this ChannelCancellationResponse.  # noqa: E501
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :return: The channel_order_no of this ChannelCancellationResponse.  # noqa: E501
         :rtype: str
@@ -76,6 +77,7 @@ class ChannelCancellationResponse(object):
     def channel_order_no(self, channel_order_no):
         """Sets the channel_order_no of this ChannelCancellationResponse.
 
+        The unique order reference used by the Channel  # noqa: E501
 
         :param channel_order_no: The channel_order_no of this ChannelCancellationResponse.  # noqa: E501
         :type: str
@@ -112,6 +114,7 @@ class ChannelCancellationResponse(object):
     def reason(self):
         """Gets the reason of this ChannelCancellationResponse.  # noqa: E501
 
+        Reason for cancellation (text)  # noqa: E501
 
         :return: The reason of this ChannelCancellationResponse.  # noqa: E501
         :rtype: str
@@ -122,6 +125,7 @@ class ChannelCancellationResponse(object):
     def reason(self, reason):
         """Sets the reason of this ChannelCancellationResponse.
 
+        Reason for cancellation (text)  # noqa: E501
 
         :param reason: The reason of this ChannelCancellationResponse.  # noqa: E501
         :type: str
@@ -133,6 +137,7 @@ class ChannelCancellationResponse(object):
     def reason_code(self):
         """Gets the reason_code of this ChannelCancellationResponse.  # noqa: E501
 
+        Reason code for cancellation  # noqa: E501
 
         :return: The reason_code of this ChannelCancellationResponse.  # noqa: E501
         :rtype: str
@@ -143,6 +148,7 @@ class ChannelCancellationResponse(object):
     def reason_code(self, reason_code):
         """Sets the reason_code of this ChannelCancellationResponse.
 
+        Reason code for cancellation  # noqa: E501
 
         :param reason_code: The reason_code of this ChannelCancellationResponse.  # noqa: E501
         :type: str

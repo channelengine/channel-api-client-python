@@ -61,6 +61,7 @@ class ChannelOfferResponse(object):
     def channel_product_no(self):
         """Gets the channel_product_no of this ChannelOfferResponse.  # noqa: E501
 
+        The unique product reference used by the Channel  # noqa: E501
 
         :return: The channel_product_no of this ChannelOfferResponse.  # noqa: E501
         :rtype: str
@@ -71,6 +72,7 @@ class ChannelOfferResponse(object):
     def channel_product_no(self, channel_product_no):
         """Sets the channel_product_no of this ChannelOfferResponse.
 
+        The unique product reference used by the Channel  # noqa: E501
 
         :param channel_product_no: The channel_product_no of this ChannelOfferResponse.  # noqa: E501
         :type: str
