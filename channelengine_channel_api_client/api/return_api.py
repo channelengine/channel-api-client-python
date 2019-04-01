@@ -107,11 +107,11 @@ class ReturnApi(object):
             body_params = params['model']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
-            ['application/json', 'text/json', 'application/x-www-form-urlencoded'])  # noqa: E501
+            ['application/json-patch+json', 'application/json', 'text/json', 'application/*+json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501
@@ -132,39 +132,39 @@ class ReturnApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def return_get_declared_by_merchant(self, created_since, **kwargs):  # noqa: E501
+    def return_get_declared_by_merchant(self, **kwargs):  # noqa: E501
         """Get Returns  # noqa: E501
 
         Get all returns created by the merchant. This call is supposed  to be used by channels. Merchants should use the 'GET /v2/returns/merchant'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_declared_by_merchant(created_since, async=True)
+        >>> thread = api.return_get_declared_by_merchant(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since:  (required)
+        :param datetime created_since: 
         :return: CollectionOfChannelReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.return_get_declared_by_merchant_with_http_info(created_since, **kwargs)  # noqa: E501
+            return self.return_get_declared_by_merchant_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.return_get_declared_by_merchant_with_http_info(created_since, **kwargs)  # noqa: E501
+            (data) = self.return_get_declared_by_merchant_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def return_get_declared_by_merchant_with_http_info(self, created_since, **kwargs):  # noqa: E501
+    def return_get_declared_by_merchant_with_http_info(self, **kwargs):  # noqa: E501
         """Get Returns  # noqa: E501
 
         Get all returns created by the merchant. This call is supposed  to be used by channels. Merchants should use the 'GET /v2/returns/merchant'  call.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.return_get_declared_by_merchant_with_http_info(created_since, async=True)
+        >>> thread = api.return_get_declared_by_merchant_with_http_info(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since:  (required)
+        :param datetime created_since: 
         :return: CollectionOfChannelReturnResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -185,10 +185,6 @@ class ReturnApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'created_since' is set
-        if ('created_since' not in params or
-                params['created_since'] is None):
-            raise ValueError("Missing the required parameter `created_since` when calling `return_get_declared_by_merchant`")  # noqa: E501
 
         collection_formats = {}
 
@@ -206,7 +202,7 @@ class ReturnApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501

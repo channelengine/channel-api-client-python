@@ -36,6 +36,8 @@ class ChannelReturnResponse(object):
         'channel_return_no': 'str',
         'channel_order_no': 'str',
         'lines': 'list[ChannelReturnLineResponse]',
+        'created_at': 'datetime',
+        'updated_at': 'datetime',
         'id': 'int',
         'reason': 'str',
         'customer_comment': 'str',
@@ -48,6 +50,8 @@ class ChannelReturnResponse(object):
         'channel_return_no': 'ChannelReturnNo',
         'channel_order_no': 'ChannelOrderNo',
         'lines': 'Lines',
+        'created_at': 'CreatedAt',
+        'updated_at': 'UpdatedAt',
         'id': 'Id',
         'reason': 'Reason',
         'customer_comment': 'CustomerComment',
@@ -56,12 +60,14 @@ class ChannelReturnResponse(object):
         'refund_excl_vat': 'RefundExclVat'
     }
 
-    def __init__(self, channel_return_no=None, channel_order_no=None, lines=None, id=None, reason=None, customer_comment=None, merchant_comment=None, refund_incl_vat=None, refund_excl_vat=None):  # noqa: E501
+    def __init__(self, channel_return_no=None, channel_order_no=None, lines=None, created_at=None, updated_at=None, id=None, reason=None, customer_comment=None, merchant_comment=None, refund_incl_vat=None, refund_excl_vat=None):  # noqa: E501
         """ChannelReturnResponse - a model defined in Swagger"""  # noqa: E501
 
         self._channel_return_no = None
         self._channel_order_no = None
         self._lines = None
+        self._created_at = None
+        self._updated_at = None
         self._id = None
         self._reason = None
         self._customer_comment = None
@@ -73,6 +79,10 @@ class ChannelReturnResponse(object):
         self.channel_return_no = channel_return_no
         self.channel_order_no = channel_order_no
         self.lines = lines
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
         if id is not None:
             self.id = id
         if reason is not None:
@@ -160,6 +170,52 @@ class ChannelReturnResponse(object):
         self._lines = lines
 
     @property
+    def created_at(self):
+        """Gets the created_at of this ChannelReturnResponse.  # noqa: E501
+
+        The date at which the return was created in ChannelEngine  # noqa: E501
+
+        :return: The created_at of this ChannelReturnResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this ChannelReturnResponse.
+
+        The date at which the return was created in ChannelEngine  # noqa: E501
+
+        :param created_at: The created_at of this ChannelReturnResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this ChannelReturnResponse.  # noqa: E501
+
+        The date at which the return was last modified in ChannelEngine  # noqa: E501
+
+        :return: The updated_at of this ChannelReturnResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this ChannelReturnResponse.
+
+        The date at which the return was last modified in ChannelEngine  # noqa: E501
+
+        :param updated_at: The updated_at of this ChannelReturnResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
+
+    @property
     def id(self):
         """Gets the id of this ChannelReturnResponse.  # noqa: E501
 
@@ -202,7 +258,7 @@ class ChannelReturnResponse(object):
         :param reason: The reason of this ChannelReturnResponse.  # noqa: E501
         :type: str
         """
-        allowed_values = ["PRODUCT_DEFECT", "PRODUCT_UNSATISFACTORY", "WRONG_PRODUCT", "TOO_MANY_PRODUCTS", "REFUSED", "REFUSED_DAMAGED", "WRONG_ADDRESS", "NOT_COLLECTED", "OTHER"]  # noqa: E501
+        allowed_values = ["PRODUCT_DEFECT", "PRODUCT_UNSATISFACTORY", "WRONG_PRODUCT", "TOO_MANY_PRODUCTS", "REFUSED", "REFUSED_DAMAGED", "WRONG_ADDRESS", "NOT_COLLECTED", "WRONG_SIZE", "OTHER"]  # noqa: E501
         if reason not in allowed_values:
             raise ValueError(
                 "Invalid value for `reason` ({0}), must be one of {1}"  # noqa: E501

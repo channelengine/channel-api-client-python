@@ -346,6 +346,8 @@ class ChannelOrderRequest(object):
         """
         if currency_code is None:
             raise ValueError("Invalid value for `currency_code`, must not be `None`")  # noqa: E501
+        if currency_code is not None and len(currency_code) > 3:
+            raise ValueError("Invalid value for `currency_code`, length must be less than or equal to `3`")  # noqa: E501
 
         self._currency_code = currency_code
 

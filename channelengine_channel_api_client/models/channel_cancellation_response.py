@@ -35,6 +35,8 @@ class ChannelCancellationResponse(object):
     swagger_types = {
         'channel_order_no': 'str',
         'lines': 'list[ChannelCancellationLineResponse]',
+        'created_at': 'datetime',
+        'updated_at': 'datetime',
         'reason': 'str',
         'reason_code': 'str'
     }
@@ -42,21 +44,29 @@ class ChannelCancellationResponse(object):
     attribute_map = {
         'channel_order_no': 'ChannelOrderNo',
         'lines': 'Lines',
+        'created_at': 'CreatedAt',
+        'updated_at': 'UpdatedAt',
         'reason': 'Reason',
         'reason_code': 'ReasonCode'
     }
 
-    def __init__(self, channel_order_no=None, lines=None, reason=None, reason_code=None):  # noqa: E501
+    def __init__(self, channel_order_no=None, lines=None, created_at=None, updated_at=None, reason=None, reason_code=None):  # noqa: E501
         """ChannelCancellationResponse - a model defined in Swagger"""  # noqa: E501
 
         self._channel_order_no = None
         self._lines = None
+        self._created_at = None
+        self._updated_at = None
         self._reason = None
         self._reason_code = None
         self.discriminator = None
 
         self.channel_order_no = channel_order_no
         self.lines = lines
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
         if reason is not None:
             self.reason = reason
         if reason_code is not None:
@@ -109,6 +119,52 @@ class ChannelCancellationResponse(object):
             raise ValueError("Invalid value for `lines`, must not be `None`")  # noqa: E501
 
         self._lines = lines
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this ChannelCancellationResponse.  # noqa: E501
+
+        The date at which the cancellation was created in ChannelEngine  # noqa: E501
+
+        :return: The created_at of this ChannelCancellationResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this ChannelCancellationResponse.
+
+        The date at which the cancellation was created in ChannelEngine  # noqa: E501
+
+        :param created_at: The created_at of this ChannelCancellationResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this ChannelCancellationResponse.  # noqa: E501
+
+        The date at which the cancellation was last modified in ChannelEngine  # noqa: E501
+
+        :return: The updated_at of this ChannelCancellationResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this ChannelCancellationResponse.
+
+        The date at which the cancellation was last modified in ChannelEngine  # noqa: E501
+
+        :param updated_at: The updated_at of this ChannelCancellationResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     @property
     def reason(self):

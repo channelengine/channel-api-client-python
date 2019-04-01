@@ -35,6 +35,8 @@ class ChannelShipmentResponse(object):
     swagger_types = {
         'channel_order_no': 'str',
         'lines': 'list[ChannelShipmentLineResponse]',
+        'created_at': 'datetime',
+        'updated_at': 'datetime',
         'track_trace_no': 'str',
         'track_trace_url': 'str',
         'method': 'str'
@@ -43,16 +45,20 @@ class ChannelShipmentResponse(object):
     attribute_map = {
         'channel_order_no': 'ChannelOrderNo',
         'lines': 'Lines',
+        'created_at': 'CreatedAt',
+        'updated_at': 'UpdatedAt',
         'track_trace_no': 'TrackTraceNo',
         'track_trace_url': 'TrackTraceUrl',
         'method': 'Method'
     }
 
-    def __init__(self, channel_order_no=None, lines=None, track_trace_no=None, track_trace_url=None, method=None):  # noqa: E501
+    def __init__(self, channel_order_no=None, lines=None, created_at=None, updated_at=None, track_trace_no=None, track_trace_url=None, method=None):  # noqa: E501
         """ChannelShipmentResponse - a model defined in Swagger"""  # noqa: E501
 
         self._channel_order_no = None
         self._lines = None
+        self._created_at = None
+        self._updated_at = None
         self._track_trace_no = None
         self._track_trace_url = None
         self._method = None
@@ -60,6 +66,10 @@ class ChannelShipmentResponse(object):
 
         self.channel_order_no = channel_order_no
         self.lines = lines
+        if created_at is not None:
+            self.created_at = created_at
+        if updated_at is not None:
+            self.updated_at = updated_at
         if track_trace_no is not None:
             self.track_trace_no = track_trace_no
         if track_trace_url is not None:
@@ -114,6 +124,52 @@ class ChannelShipmentResponse(object):
             raise ValueError("Invalid value for `lines`, must not be `None`")  # noqa: E501
 
         self._lines = lines
+
+    @property
+    def created_at(self):
+        """Gets the created_at of this ChannelShipmentResponse.  # noqa: E501
+
+        The date at which the shipment was created in ChannelEngine  # noqa: E501
+
+        :return: The created_at of this ChannelShipmentResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._created_at
+
+    @created_at.setter
+    def created_at(self, created_at):
+        """Sets the created_at of this ChannelShipmentResponse.
+
+        The date at which the shipment was created in ChannelEngine  # noqa: E501
+
+        :param created_at: The created_at of this ChannelShipmentResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._created_at = created_at
+
+    @property
+    def updated_at(self):
+        """Gets the updated_at of this ChannelShipmentResponse.  # noqa: E501
+
+        The date at which the shipment was last modified in ChannelEngine  # noqa: E501
+
+        :return: The updated_at of this ChannelShipmentResponse.  # noqa: E501
+        :rtype: datetime
+        """
+        return self._updated_at
+
+    @updated_at.setter
+    def updated_at(self, updated_at):
+        """Sets the updated_at of this ChannelShipmentResponse.
+
+        The date at which the shipment was last modified in ChannelEngine  # noqa: E501
+
+        :param updated_at: The updated_at of this ChannelShipmentResponse.  # noqa: E501
+        :type: datetime
+        """
+
+        self._updated_at = updated_at
 
     @property
     def track_trace_no(self):
@@ -173,7 +229,7 @@ class ChannelShipmentResponse(object):
     def method(self):
         """Gets the method of this ChannelShipmentResponse.  # noqa: E501
 
-        Shipment method (carrier)  # noqa: E501
+        Shipment method: the carrier used for shipping the package. E.g. DHL, postNL  # noqa: E501
 
         :return: The method of this ChannelShipmentResponse.  # noqa: E501
         :rtype: str
@@ -184,7 +240,7 @@ class ChannelShipmentResponse(object):
     def method(self, method):
         """Sets the method of this ChannelShipmentResponse.
 
-        Shipment method (carrier)  # noqa: E501
+        Shipment method: the carrier used for shipping the package. E.g. DHL, postNL  # noqa: E501
 
         :param method: The method of this ChannelShipmentResponse.  # noqa: E501
         :type: str

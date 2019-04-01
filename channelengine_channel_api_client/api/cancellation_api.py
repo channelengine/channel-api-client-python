@@ -33,39 +33,39 @@ class CancellationApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancellation_index(self, created_since, **kwargs):  # noqa: E501
+    def cancellation_index(self, **kwargs):  # noqa: E501
         """Get Cancellations  # noqa: E501
 
         Gets all cancellations created since the supplied date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancellation_index(created_since, async=True)
+        >>> thread = api.cancellation_index(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since:  (required)
+        :param datetime created_since: 
         :return: CollectionOfChannelCancellationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async'):
-            return self.cancellation_index_with_http_info(created_since, **kwargs)  # noqa: E501
+            return self.cancellation_index_with_http_info(**kwargs)  # noqa: E501
         else:
-            (data) = self.cancellation_index_with_http_info(created_since, **kwargs)  # noqa: E501
+            (data) = self.cancellation_index_with_http_info(**kwargs)  # noqa: E501
             return data
 
-    def cancellation_index_with_http_info(self, created_since, **kwargs):  # noqa: E501
+    def cancellation_index_with_http_info(self, **kwargs):  # noqa: E501
         """Get Cancellations  # noqa: E501
 
         Gets all cancellations created since the supplied date.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async=True
-        >>> thread = api.cancellation_index_with_http_info(created_since, async=True)
+        >>> thread = api.cancellation_index_with_http_info(async=True)
         >>> result = thread.get()
 
         :param async bool
-        :param datetime created_since:  (required)
+        :param datetime created_since: 
         :return: CollectionOfChannelCancellationResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -86,10 +86,6 @@ class CancellationApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'created_since' is set
-        if ('created_since' not in params or
-                params['created_since'] is None):
-            raise ValueError("Missing the required parameter `created_since` when calling `cancellation_index`")  # noqa: E501
 
         collection_formats = {}
 
@@ -107,7 +103,7 @@ class CancellationApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json', 'text/json'])  # noqa: E501
+            ['text/plain', 'application/json', 'text/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = ['apikey']  # noqa: E501

@@ -64,7 +64,8 @@ class ChannelOrderLineRequest(object):
 
         self.channel_product_no = channel_product_no
         self.quantity = quantity
-        self.cancellation_requested_quantity = cancellation_requested_quantity
+        if cancellation_requested_quantity is not None:
+            self.cancellation_requested_quantity = cancellation_requested_quantity
         self.unit_price_incl_vat = unit_price_incl_vat
         if fee_fixed is not None:
             self.fee_fixed = fee_fixed
@@ -147,8 +148,6 @@ class ChannelOrderLineRequest(object):
         :param cancellation_requested_quantity: The cancellation_requested_quantity of this ChannelOrderLineRequest.  # noqa: E501
         :type: int
         """
-        if cancellation_requested_quantity is None:
-            raise ValueError("Invalid value for `cancellation_requested_quantity`, must not be `None`")  # noqa: E501
 
         self._cancellation_requested_quantity = cancellation_requested_quantity
 
@@ -243,7 +242,7 @@ class ChannelOrderLineRequest(object):
         :param condition: The condition of this ChannelOrderLineRequest.  # noqa: E501
         :type: str
         """
-        allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN"]  # noqa: E501
+        allowed_values = ["NEW", "NEW_REFURBISHED", "USED_AS_NEW", "USED_GOOD", "USED_REASONABLE", "USED_MEDIOCRE", "UNKNOWN", "USED_VERY_GOOD"]  # noqa: E501
         if condition not in allowed_values:
             raise ValueError(
                 "Invalid value for `condition` ({0}), must be one of {1}"  # noqa: E501
