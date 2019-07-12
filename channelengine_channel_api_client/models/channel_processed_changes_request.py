@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from channelengine_channel_api_client.models.channel_references_request import ChannelReferencesRequest  # noqa: F401,E501
+from channelengine_channel_api_client.models.channel_product_references_request import ChannelProductReferencesRequest  # noqa: F401,E501
 
 
 class ChannelProcessedChangesRequest(object):
@@ -33,7 +33,7 @@ class ChannelProcessedChangesRequest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created': 'list[ChannelReferencesRequest]',
+        'created': 'list[ChannelProductReferencesRequest]',
         'updated': 'list[str]',
         'removed': 'list[str]'
     }
@@ -66,7 +66,7 @@ class ChannelProcessedChangesRequest(object):
         A collection of pairs of merchant and channel references  of the products which are successfully created. The channel references  are saved such that in subsequent calls these can be used instead of the   merchant references.  # noqa: E501
 
         :return: The created of this ChannelProcessedChangesRequest.  # noqa: E501
-        :rtype: list[ChannelReferencesRequest]
+        :rtype: list[ChannelProductReferencesRequest]
         """
         return self._created
 
@@ -77,7 +77,7 @@ class ChannelProcessedChangesRequest(object):
         A collection of pairs of merchant and channel references  of the products which are successfully created. The channel references  are saved such that in subsequent calls these can be used instead of the   merchant references.  # noqa: E501
 
         :param created: The created of this ChannelProcessedChangesRequest.  # noqa: E501
-        :type: list[ChannelReferencesRequest]
+        :type: list[ChannelProductReferencesRequest]
         """
 
         self._created = created
