@@ -524,6 +524,9 @@ class ChannelOrderRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ChannelOrderRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

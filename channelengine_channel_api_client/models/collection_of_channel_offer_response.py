@@ -305,6 +305,9 @@ class CollectionOfChannelOfferResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(CollectionOfChannelOfferResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

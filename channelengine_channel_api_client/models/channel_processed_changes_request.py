@@ -149,6 +149,9 @@ class ChannelProcessedChangesRequest(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ChannelProcessedChangesRequest, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 

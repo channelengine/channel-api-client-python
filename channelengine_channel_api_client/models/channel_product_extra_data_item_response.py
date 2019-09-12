@@ -181,6 +181,9 @@ class ChannelProductExtraDataItemResponse(object):
                 ))
             else:
                 result[attr] = value
+        if issubclass(ChannelProductExtraDataItemResponse, dict):
+            for key, value in self.items():
+                result[key] = value
 
         return result
 
