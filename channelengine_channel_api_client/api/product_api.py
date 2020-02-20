@@ -135,7 +135,7 @@ class ProductApi(object):
     def product_acknowledge_offer_changes(self, changes, **kwargs):  # noqa: E501
         """Acknowledge Product Offer Changes  # noqa: E501
 
-        After a call to GET 'v2/products/offers' this endpoint should be called with the  ChannelReturnNo of the products that are successfully updated.  Please see 'v2/products/data' and 'v2/products/data' for documentation.  # noqa: E501
+        After a call to GET 'v2/products/offers' this endpoint should be called with the  ChannelProductNo of the products that are successfully updated.  Please see 'v2/products/data' and 'v2/products/data' for documentation.  In advanced cases, the MerchantProductNo is used for this.   In that case, bool keyIsMpn should be true.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.product_acknowledge_offer_changes(changes, async_req=True)
@@ -143,6 +143,7 @@ class ProductApi(object):
 
         :param async_req bool
         :param list[str] changes: The channel references of the updated products (required)
+        :param bool key_is_mpn: If set to true, changes has to be a list of merchant references instead of channel references
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -157,7 +158,7 @@ class ProductApi(object):
     def product_acknowledge_offer_changes_with_http_info(self, changes, **kwargs):  # noqa: E501
         """Acknowledge Product Offer Changes  # noqa: E501
 
-        After a call to GET 'v2/products/offers' this endpoint should be called with the  ChannelReturnNo of the products that are successfully updated.  Please see 'v2/products/data' and 'v2/products/data' for documentation.  # noqa: E501
+        After a call to GET 'v2/products/offers' this endpoint should be called with the  ChannelProductNo of the products that are successfully updated.  Please see 'v2/products/data' and 'v2/products/data' for documentation.  In advanced cases, the MerchantProductNo is used for this.   In that case, bool keyIsMpn should be true.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.product_acknowledge_offer_changes_with_http_info(changes, async_req=True)
@@ -165,12 +166,13 @@ class ProductApi(object):
 
         :param async_req bool
         :param list[str] changes: The channel references of the updated products (required)
+        :param bool key_is_mpn: If set to true, changes has to be a list of merchant references instead of channel references
         :return: ApiResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['changes']  # noqa: E501
+        all_params = ['changes', 'key_is_mpn']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -195,6 +197,8 @@ class ProductApi(object):
         path_params = {}
 
         query_params = []
+        if 'key_is_mpn' in params:
+            query_params.append(('keyIsMpn', params['key_is_mpn']))  # noqa: E501
 
         header_params = {}
 

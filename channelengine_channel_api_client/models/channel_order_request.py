@@ -38,6 +38,7 @@ class ChannelOrderRequest(object):
         'shipping_address': 'ChannelAddressRequest',
         'channel_order_no': 'str',
         'is_business_order': 'bool',
+        'key_is_merchant_product_no': 'bool',
         'lines': 'list[ChannelOrderLineRequest]',
         'phone': 'str',
         'email': 'str',
@@ -56,6 +57,7 @@ class ChannelOrderRequest(object):
         'shipping_address': 'ShippingAddress',
         'channel_order_no': 'ChannelOrderNo',
         'is_business_order': 'IsBusinessOrder',
+        'key_is_merchant_product_no': 'KeyIsMerchantProductNo',
         'lines': 'Lines',
         'phone': 'Phone',
         'email': 'Email',
@@ -69,13 +71,14 @@ class ChannelOrderRequest(object):
         'extra_data': 'ExtraData'
     }
 
-    def __init__(self, billing_address=None, shipping_address=None, channel_order_no=None, is_business_order=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, extra_data=None):  # noqa: E501
+    def __init__(self, billing_address=None, shipping_address=None, channel_order_no=None, is_business_order=None, key_is_merchant_product_no=None, lines=None, phone=None, email=None, company_registration_no=None, vat_no=None, payment_method=None, shipping_costs_incl_vat=None, currency_code=None, order_date=None, channel_customer_no=None, extra_data=None):  # noqa: E501
         """ChannelOrderRequest - a model defined in Swagger"""  # noqa: E501
 
         self._billing_address = None
         self._shipping_address = None
         self._channel_order_no = None
         self._is_business_order = None
+        self._key_is_merchant_product_no = None
         self._lines = None
         self._phone = None
         self._email = None
@@ -94,6 +97,8 @@ class ChannelOrderRequest(object):
         self.channel_order_no = channel_order_no
         if is_business_order is not None:
             self.is_business_order = is_business_order
+        if key_is_merchant_product_no is not None:
+            self.key_is_merchant_product_no = key_is_merchant_product_no
         self.lines = lines
         if phone is not None:
             self.phone = phone
@@ -213,6 +218,29 @@ class ChannelOrderRequest(object):
         """
 
         self._is_business_order = is_business_order
+
+    @property
+    def key_is_merchant_product_no(self):
+        """Gets the key_is_merchant_product_no of this ChannelOrderRequest.  # noqa: E501
+
+        Optional. Is the MPN used as key for the product (default value is false).  # noqa: E501
+
+        :return: The key_is_merchant_product_no of this ChannelOrderRequest.  # noqa: E501
+        :rtype: bool
+        """
+        return self._key_is_merchant_product_no
+
+    @key_is_merchant_product_no.setter
+    def key_is_merchant_product_no(self, key_is_merchant_product_no):
+        """Sets the key_is_merchant_product_no of this ChannelOrderRequest.
+
+        Optional. Is the MPN used as key for the product (default value is false).  # noqa: E501
+
+        :param key_is_merchant_product_no: The key_is_merchant_product_no of this ChannelOrderRequest.  # noqa: E501
+        :type: bool
+        """
+
+        self._key_is_merchant_product_no = key_is_merchant_product_no
 
     @property
     def lines(self):
@@ -432,7 +460,7 @@ class ChannelOrderRequest(object):
     def order_date(self):
         """Gets the order_date of this ChannelOrderRequest.  # noqa: E501
 
-        The date the order was done  # noqa: E501
+        The date the order was created at the channel  # noqa: E501
 
         :return: The order_date of this ChannelOrderRequest.  # noqa: E501
         :rtype: datetime
@@ -443,7 +471,7 @@ class ChannelOrderRequest(object):
     def order_date(self, order_date):
         """Sets the order_date of this ChannelOrderRequest.
 
-        The date the order was done  # noqa: E501
+        The date the order was created at the channel  # noqa: E501
 
         :param order_date: The order_date of this ChannelOrderRequest.  # noqa: E501
         :type: datetime

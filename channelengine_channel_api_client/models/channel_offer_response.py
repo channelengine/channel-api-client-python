@@ -32,26 +32,31 @@ class ChannelOfferResponse(object):
     """
     swagger_types = {
         'channel_product_no': 'str',
+        'merchant_product_no': 'str',
         'price': 'float',
         'stock': 'int'
     }
 
     attribute_map = {
         'channel_product_no': 'ChannelProductNo',
+        'merchant_product_no': 'MerchantProductNo',
         'price': 'Price',
         'stock': 'Stock'
     }
 
-    def __init__(self, channel_product_no=None, price=None, stock=None):  # noqa: E501
+    def __init__(self, channel_product_no=None, merchant_product_no=None, price=None, stock=None):  # noqa: E501
         """ChannelOfferResponse - a model defined in Swagger"""  # noqa: E501
 
         self._channel_product_no = None
+        self._merchant_product_no = None
         self._price = None
         self._stock = None
         self.discriminator = None
 
         if channel_product_no is not None:
             self.channel_product_no = channel_product_no
+        if merchant_product_no is not None:
+            self.merchant_product_no = merchant_product_no
         if price is not None:
             self.price = price
         if stock is not None:
@@ -79,6 +84,27 @@ class ChannelOfferResponse(object):
         """
 
         self._channel_product_no = channel_product_no
+
+    @property
+    def merchant_product_no(self):
+        """Gets the merchant_product_no of this ChannelOfferResponse.  # noqa: E501
+
+
+        :return: The merchant_product_no of this ChannelOfferResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_product_no
+
+    @merchant_product_no.setter
+    def merchant_product_no(self, merchant_product_no):
+        """Sets the merchant_product_no of this ChannelOfferResponse.
+
+
+        :param merchant_product_no: The merchant_product_no of this ChannelOfferResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._merchant_product_no = merchant_product_no
 
     @property
     def price(self):

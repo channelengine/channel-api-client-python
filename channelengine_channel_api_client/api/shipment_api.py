@@ -43,7 +43,12 @@ class ShipmentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime created_since: 
+        :param datetime created_since: Deprecated, please use FromDate instead.
+        :param list[str] statuses: Shipment status(es) to filter on
+        :param datetime from_date: Filter on the creation date, starting from this date. This date is inclusive.
+        :param datetime to_date: Filter on the creation date, until this date. This date is exclusive.
+        :param list[str] channel_order_nos: Filter on the unique references (ids) as used by the channel.
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfChannelShipmentResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -65,13 +70,18 @@ class ShipmentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param datetime created_since: 
+        :param datetime created_since: Deprecated, please use FromDate instead.
+        :param list[str] statuses: Shipment status(es) to filter on
+        :param datetime from_date: Filter on the creation date, starting from this date. This date is inclusive.
+        :param datetime to_date: Filter on the creation date, until this date. This date is exclusive.
+        :param list[str] channel_order_nos: Filter on the unique references (ids) as used by the channel.
+        :param int page: The page to filter on. Starts at 1.
         :return: CollectionOfChannelShipmentResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['created_since']  # noqa: E501
+        all_params = ['created_since', 'statuses', 'from_date', 'to_date', 'channel_order_nos', 'page']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,6 +104,18 @@ class ShipmentApi(object):
         query_params = []
         if 'created_since' in params:
             query_params.append(('createdSince', params['created_since']))  # noqa: E501
+        if 'statuses' in params:
+            query_params.append(('statuses', params['statuses']))  # noqa: E501
+            collection_formats['statuses'] = 'multi'  # noqa: E501
+        if 'from_date' in params:
+            query_params.append(('fromDate', params['from_date']))  # noqa: E501
+        if 'to_date' in params:
+            query_params.append(('toDate', params['to_date']))  # noqa: E501
+        if 'channel_order_nos' in params:
+            query_params.append(('channelOrderNos', params['channel_order_nos']))  # noqa: E501
+            collection_formats['channelOrderNos'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
 
         header_params = {}
 

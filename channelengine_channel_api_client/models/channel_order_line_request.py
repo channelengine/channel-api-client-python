@@ -32,6 +32,7 @@ class ChannelOrderLineRequest(object):
     """
     swagger_types = {
         'channel_product_no': 'str',
+        'merchant_product_no': 'str',
         'quantity': 'int',
         'cancellation_requested_quantity': 'int',
         'unit_price_incl_vat': 'float',
@@ -42,6 +43,7 @@ class ChannelOrderLineRequest(object):
 
     attribute_map = {
         'channel_product_no': 'ChannelProductNo',
+        'merchant_product_no': 'MerchantProductNo',
         'quantity': 'Quantity',
         'cancellation_requested_quantity': 'CancellationRequestedQuantity',
         'unit_price_incl_vat': 'UnitPriceInclVat',
@@ -50,10 +52,11 @@ class ChannelOrderLineRequest(object):
         'condition': 'Condition'
     }
 
-    def __init__(self, channel_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
+    def __init__(self, channel_product_no=None, merchant_product_no=None, quantity=None, cancellation_requested_quantity=None, unit_price_incl_vat=None, fee_fixed=None, fee_rate=None, condition=None):  # noqa: E501
         """ChannelOrderLineRequest - a model defined in Swagger"""  # noqa: E501
 
         self._channel_product_no = None
+        self._merchant_product_no = None
         self._quantity = None
         self._cancellation_requested_quantity = None
         self._unit_price_incl_vat = None
@@ -63,6 +66,8 @@ class ChannelOrderLineRequest(object):
         self.discriminator = None
 
         self.channel_product_no = channel_product_no
+        if merchant_product_no is not None:
+            self.merchant_product_no = merchant_product_no
         self.quantity = quantity
         if cancellation_requested_quantity is not None:
             self.cancellation_requested_quantity = cancellation_requested_quantity
@@ -78,7 +83,7 @@ class ChannelOrderLineRequest(object):
     def channel_product_no(self):
         """Gets the channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
 
-        The unique order reference used by the channel  # noqa: E501
+        The unique product reference used by the channel  # noqa: E501
 
         :return: The channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
         :rtype: str
@@ -89,7 +94,7 @@ class ChannelOrderLineRequest(object):
     def channel_product_no(self, channel_product_no):
         """Sets the channel_product_no of this ChannelOrderLineRequest.
 
-        The unique order reference used by the channel  # noqa: E501
+        The unique product reference used by the channel  # noqa: E501
 
         :param channel_product_no: The channel_product_no of this ChannelOrderLineRequest.  # noqa: E501
         :type: str
@@ -102,6 +107,33 @@ class ChannelOrderLineRequest(object):
             raise ValueError("Invalid value for `channel_product_no`, length must be greater than or equal to `0`")  # noqa: E501
 
         self._channel_product_no = channel_product_no
+
+    @property
+    def merchant_product_no(self):
+        """Gets the merchant_product_no of this ChannelOrderLineRequest.  # noqa: E501
+
+        The unique product reference used by the merchant  # noqa: E501
+
+        :return: The merchant_product_no of this ChannelOrderLineRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._merchant_product_no
+
+    @merchant_product_no.setter
+    def merchant_product_no(self, merchant_product_no):
+        """Sets the merchant_product_no of this ChannelOrderLineRequest.
+
+        The unique product reference used by the merchant  # noqa: E501
+
+        :param merchant_product_no: The merchant_product_no of this ChannelOrderLineRequest.  # noqa: E501
+        :type: str
+        """
+        if merchant_product_no is not None and len(merchant_product_no) > 50:
+            raise ValueError("Invalid value for `merchant_product_no`, length must be less than or equal to `50`")  # noqa: E501
+        if merchant_product_no is not None and len(merchant_product_no) < 0:
+            raise ValueError("Invalid value for `merchant_product_no`, length must be greater than or equal to `0`")  # noqa: E501
+
+        self._merchant_product_no = merchant_product_no
 
     @property
     def quantity(self):
