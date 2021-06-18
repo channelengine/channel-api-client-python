@@ -1,10 +1,3 @@
-from __future__ import absolute_import
-
-# flake8: noqa
-
-# import apis into api package
-from channelengine_channel_api_client.api.cancellation_api import CancellationApi
-from channelengine_channel_api_client.api.order_api import OrderApi
-from channelengine_channel_api_client.api.product_api import ProductApi
-from channelengine_channel_api_client.api.return_api import ReturnApi
-from channelengine_channel_api_client.api.shipment_api import ShipmentApi
+# do not import all apis into this module because that uses a lot of memory and stack frames
+# if you need the ability to import all apis from one package, import them with
+# from channelengine_channel_api_client.apis import CancellationApi
