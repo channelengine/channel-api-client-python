@@ -40,7 +40,9 @@ channelengine_channel_api_client/model/condition.py
 channelengine_channel_api_client/model/data_changes_product_type.py
 channelengine_channel_api_client/model/extra_data_type.py
 channelengine_channel_api_client/model/gender.py
+channelengine_channel_api_client/model/json_patch_document.py
 channelengine_channel_api_client/model/manco_reason.py
+channelengine_channel_api_client/model/operation.py
 channelengine_channel_api_client/model/order_status_view.py
 channelengine_channel_api_client/model/return_reason.py
 channelengine_channel_api_client/model/return_status.py
