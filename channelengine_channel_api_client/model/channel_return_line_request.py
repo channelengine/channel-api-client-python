@@ -81,6 +81,7 @@ class ChannelReturnLineRequest(ModelNormal):
             'quantity': (int,),  # noqa: E501
             'channel_product_no': (str, none_type,),  # noqa: E501
             'merchant_product_no': (str, none_type,),  # noqa: E501
+            'extra_data': ({str: (str,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -92,6 +93,7 @@ class ChannelReturnLineRequest(ModelNormal):
         'quantity': 'Quantity',  # noqa: E501
         'channel_product_no': 'ChannelProductNo',  # noqa: E501
         'merchant_product_no': 'MerchantProductNo',  # noqa: E501
+        'extra_data': 'ExtraData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,6 +142,7 @@ class ChannelReturnLineRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channel_product_no (str, none_type): The unique product reference used by the Channel.. [optional]  # noqa: E501
             merchant_product_no (str, none_type): The unique product reference used by the Merchant.. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -227,6 +230,7 @@ class ChannelReturnLineRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             channel_product_no (str, none_type): The unique product reference used by the Channel.. [optional]  # noqa: E501
             merchant_product_no (str, none_type): The unique product reference used by the Merchant.. [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

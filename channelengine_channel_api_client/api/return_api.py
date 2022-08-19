@@ -108,6 +108,7 @@ class ReturnApi(object):
                     'reasons',
                     'from_date',
                     'to_date',
+                    'is_acknowledged',
                     'page',
                 ],
                 'required': [],
@@ -132,6 +133,8 @@ class ReturnApi(object):
                         (datetime,),
                     'to_date':
                         (datetime,),
+                    'is_acknowledged':
+                        (bool,),
                     'page':
                         (int,),
                 },
@@ -140,6 +143,7 @@ class ReturnApi(object):
                     'reasons': 'reasons',
                     'from_date': 'fromDate',
                     'to_date': 'toDate',
+                    'is_acknowledged': 'isAcknowledged',
                     'page': 'page',
                 },
                 'location_map': {
@@ -147,6 +151,7 @@ class ReturnApi(object):
                     'reasons': 'query',
                     'from_date': 'query',
                     'to_date': 'query',
+                    'is_acknowledged': 'query',
                     'page': 'query',
                 },
                 'collection_format_map': {
@@ -244,6 +249,7 @@ class ReturnApi(object):
             reasons ([ReturnReason]): Return reason(s) to filter on.. [optional]
             from_date (datetime): Filter on the creation date, starting from this date. This date is inclusive.. [optional]
             to_date (datetime): Filter on the creation date, until this date. This date is exclusive.. [optional]
+            is_acknowledged (bool): Filters based on acknowledgements. [optional]
             page (int): The page to filter on. Starts at 1.. [optional]
             _return_http_data_only (bool): response data without head status
                 code and headers. Default is True.

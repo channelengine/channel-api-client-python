@@ -92,6 +92,7 @@ class ChannelReturnLineResponse(ModelNormal):
             'rejected_quantity': (int, none_type,),  # noqa: E501
             'order_line': (ChannelOrderLineResponse,),  # noqa: E501
             'shipment_status': (ShipmentLineStatus,),  # noqa: E501
+            'extra_data': ({str: (str,)}, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -107,6 +108,7 @@ class ChannelReturnLineResponse(ModelNormal):
         'rejected_quantity': 'RejectedQuantity',  # noqa: E501
         'order_line': 'OrderLine',  # noqa: E501
         'shipment_status': 'ShipmentStatus',  # noqa: E501
+        'extra_data': 'ExtraData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +161,7 @@ class ChannelReturnLineResponse(ModelNormal):
             rejected_quantity (int, none_type): The number of rejected items of the product in this return (should normally not be refunded).. [optional]  # noqa: E501
             order_line (ChannelOrderLineResponse): [optional]  # noqa: E501
             shipment_status (ShipmentLineStatus): [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,6 +254,7 @@ class ChannelReturnLineResponse(ModelNormal):
             rejected_quantity (int, none_type): The number of rejected items of the product in this return (should normally not be refunded).. [optional]  # noqa: E501
             order_line (ChannelOrderLineResponse): [optional]  # noqa: E501
             shipment_status (ShipmentLineStatus): [optional]  # noqa: E501
+            extra_data ({str: (str,)}, none_type): Extra data on the returnline. Each item must have an unqiue key. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
